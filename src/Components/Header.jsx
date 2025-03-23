@@ -1,7 +1,9 @@
 import React, {useState} from 'react'
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoMdClose } from "react-icons/io"; 
 import './Header.css'
 
-export default function Header({setOpenCart}) {
+export default function Header({setOpenCart, openHamburger, setOpenHamburger}) {
   const [select, setSelect] = useState(0)
 
   const Links = [
@@ -39,11 +41,15 @@ export default function Header({setOpenCart}) {
   return (
     <div className='Header' >
       <div className="HeaderContainer">
+      {openHamburger? 
+      <IoMdClose className='Hamburger' size={30} onClick={() => setOpenHamburger(false)} /> :
+      <GiHamburgerMenu className="Hamburger" size={30} onClick={() => setOpenHamburger(true)} />}
       <div className="LogoLinks">
         <div className="Logo">
           <h1> sneakers </h1>
         </div>
-        <div className="Links">
+        <div className={`Links ${openHamburger? "Linksopen" : ""}`}>
+          <IoMdClose className='Hamburger' size={30} onClick={() => setOpenHamburger(false)} />
           {Links.map((indLinks, index) => (
             <p onClick={() => handleSelection(index)} key={index}> {indLinks.text} </p>
           ))}

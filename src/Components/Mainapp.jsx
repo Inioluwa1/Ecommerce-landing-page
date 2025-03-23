@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { BsCart2 } from "react-icons/bs";
 import './Mainapp.css'
 
-export default function Mainapp({count, setCount, setOpenCart}) {
+export default function Mainapp({count, setCount, setOpenCart, openHamburger}) {
   const [selectedimage, setSelectedImage] = useState(0)
 
   const increase = () => {
@@ -15,9 +15,22 @@ export default function Mainapp({count, setCount, setOpenCart}) {
   }
   const setImage = (id) => {
     setSelectedImage(id)
-  }
+  } 
   const cartOpen = () => {
     setOpenCart(true)
+  }
+  const previous = () => {
+    if (selectedimage === 0) {
+      setSelectedImage(3)
+    } else
+    setSelectedImage(selectedimage - 1)
+  }
+
+  const next = () => {
+    if (selectedimage === 3){
+      setSelectedImage(0)
+    } else
+    setSelectedImage(selectedimage + 1)
   }
 
   const images = [
@@ -40,22 +53,34 @@ export default function Mainapp({count, setCount, setOpenCart}) {
   ]
 
   return (
-    <div className='MainappContainer' onClick={() => setOpenCart(false)}>
-      <div className='Images' >
+    <div className='MainappContainer' >
+
+      <div className='Images' onClick={() => setOpenCart(false)} >
         <div className='ImageSlider'>
+          {openHamburger || 
+          <div className= "previous" onClick={previous}>
+            <img src='icon-previous.svg' className='prevarrow' />
+          </div>}
           {images.map((image, index) => (
             <img key={image.id} src={image.src} className={`MainImage ${index === selectedimage? "selected" : ""}`} />
           )
           )}
+          <div className= "next" onClick={next}>
+            <img src='icon-next.svg' className='nextarrow' />
+          </div>
         </div>
+
         <div className='SmallImages'>
           {images.map((image, index ) => (
             <img src={image.src} alt={`Image ${image.id}`} key={index} onClick={() => setImage(index)} className={`SmallImage ${index === selectedimage? "SelectedImage" : ""}`}/>
           ))}
         </div>
+
       </div>
+
       <div className='MainContent'>
-        <div className='Content'>        
+
+        <div className='Content' onClick={() => setOpenCart(false)}>        
           <h5> SNEAKER COMPANY </h5>
           <h1 className='ItemName'> Fall Limited Edition Sneakers</h1>
           <p className='ItemContent'> These low profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer </p>
@@ -65,6 +90,7 @@ export default function Mainapp({count, setCount, setOpenCart}) {
           </div>
           <p className='OldPrice'> $250.00 </p>
         </div>
+        
         <div className='Buttons'>
           <div className='Counter'>
             <div className='decrease' onClick={decrease}>
@@ -80,6 +106,7 @@ export default function Mainapp({count, setCount, setOpenCart}) {
           </div>
         </div>
       </div>
+
     </div>
   )
 }

@@ -1,7 +1,9 @@
 .Header{
   margin-bottom: 5%;
 }
-
+.Hamburger{
+  display: none;
+}
 .HeaderContainer{
   display: flex;
   /* border: 3px solid; */
@@ -81,4 +83,75 @@
 }
 .selected{
   color: hsl(26, 100%, 55%);
+}
+
+@media screen and (max-width: 1200px) {
+  .Header{
+    width: 100%;
+    /* border: 3px solid; */
+    padding: 0 10px 
+  }
+  .Hamburger{
+    display: block;
+    cursor: pointer;;
+    /* border: 3px solid */
+  }
+  .LogoLinks{
+    width: 40%;
+    position: relative;
+    right: 15px;
+    bottom: 3px;
+  }
+  .Logo h1{
+    font-size: 2rem;
+    margin-left: 5px;
+  }
+  .Links{
+    display: none;
+    /* border: 3px solid; */
+    height: 100vh;
+    width: 250px;
+    background-color: white;
+    color: black;
+    position: absolute;
+    left: -60px;
+    top: -30px;
+    padding: 1rem 2rem;
+  }
+  .Linksopen{
+    display: block;
+  }
+  .Links p{
+    margin-top: 2rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  .Links p:hover{
+    color: grey
+  }
+
+  .Dash{
+    display: none;
+  }
+
+
+}
+
+@media screen and (min-width: 700px) {
+  .Links{
+    left: -150px
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .Links{
+    left: -170px
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .Links{
+    left: -210px
+  }
 }

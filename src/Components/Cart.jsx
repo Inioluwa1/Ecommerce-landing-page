@@ -6,7 +6,7 @@ export default function Cart({count, setOpenCart}) {
   const [value, setValue] = useState()
 
   useEffect(() => {
-    setValue(125 * count)
+    setValue(125 * count) 
   }, [])
 
   const closeCart = () => {

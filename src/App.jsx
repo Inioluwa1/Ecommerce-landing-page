@@ -7,12 +7,22 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
   const [openCart, setOpenCart ] = useState(false)
+  const [openHamburger, setOpenHamburger] = useState(false)
 
   return (
     <div>
-      <Header setOpenCart={setOpenCart} />
-      <Mainapp count={count} setCount={setCount} setOpenCart={setOpenCart} />
-      {openCart && <Cart count={count} setOpenCart = {setOpenCart} />}
+      <Header 
+        setOpenCart={setOpenCart} 
+        openHamburger={openHamburger} 
+        setOpenHamburger={setOpenHamburger} />
+      <Mainapp 
+        count={count} 
+        setCount={setCount} 
+        setOpenCart={setOpenCart}
+        openHamburger={openHamburger} />
+      {openCart && <Cart 
+                      count={count} 
+                      setOpenCart = {setOpenCart} />}
     </div>
   )
 }

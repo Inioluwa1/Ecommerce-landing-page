@@ -5,7 +5,6 @@
   justify-content: space-between;
   width: 95%;
   margin: auto;
-
 }
 
 .Images{
@@ -17,6 +16,14 @@
   display: flex;
   overflow: hidden;
 }
+.previous{
+  display: none;
+}
+
+.next{
+  display: none;
+}
+
 .MainImage{
   width: 90%;
   height: 50%;
@@ -156,4 +163,131 @@
 }
 .AddToCart button:hover{
   background-color: rgba(255, 125, 26, 0.4);
+}
+
+@media screen and (max-width: 1200px) {
+  .MainappContainer{
+    flex-direction: column;
+  }
+  .Images{
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  .previous{
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 35%;
+    border-radius: 50%;
+    background-color: white;
+    margin-left: 10px;
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  .prevarrow{
+    position: relative;
+    top: 30%;
+    left: 25%;
+    width: 20px;
+    height: 20px;
+  }
+  .previous:hover{
+    background-color: grey;
+  }
+  .next{
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 35%;
+    right: 0;
+    border-radius: 50%;
+    background-color: white;
+    margin-right: 20px;
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  .nextarrow{
+    position: relative;
+    top: 30%;
+    left: 30%;
+    width: 20px;
+    height: 20px;
+  }
+  .next:hover{
+    background-color: grey;
+  }
+  .MainImage{
+    width: 100%;
+    border-radius: 0;
+  }
+  .SmallImages{
+    display: none
+  }
+  .MainContent{
+    width: 100%;
+    padding: 1rem 1rem
+  }
+  .Content{
+    /* border: 3px solid; */
+    width: 100%;
+  }
+  .Content h5{
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  .ItemName{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .ItemContent{
+    font-size: 1rem;
+    font-weight: 300;
+    /* border: 3px solid; */
+    margin-bottom: 1rem;
+  }
+  .NewPrice{
+    width: 55%
+  }
+  .NewPrice p{
+    font-size: 1rem;
+  }
+  .OldPrice{
+    position: relative;
+    left: 70%;
+    bottom: 50px;
+    font-size: 1.3rem;
+    /* border: 3px solid; */
+    width: 100px;
+  }
+  .Buttons{
+    flex-direction: column;
+    width: 100%;
+    margin-top: -5%;
+  }
+  .Counter{
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 10px 10px;
+  }
+  .AddToCart{
+    width: 100%
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .MainImage{
+    height: 30rem;
+    width: 80%;
+    margin: auto;
+  }
+  .previous{
+    top: 90%;
+    left: 13%
+  }
+  .next{
+    right: 13%;
+    top: 90%
+  }
 }
