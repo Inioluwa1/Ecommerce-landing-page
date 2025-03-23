@@ -283,11 +283,11 @@
     margin: auto;
   }
   .previous{
-    top: 90%;
+    top: 350px;
     left: 13%
   }
   .next{
     right: 13%;
-    top: 90%
+    top: 350px
   }
 }
