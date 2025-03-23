@@ -40,7 +40,7 @@ export default function Mainapp({count, setCount, setOpenCart}) {
   ]
 
   return (
-    <div className='MainappContainer'>
+    <div className='MainappContainer' onClick={() => setOpenCart(false)}>
       <div className='Images' >
         <div className='ImageSlider'>
           {images.map((image, index) => (

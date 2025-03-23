@@ -5,7 +5,7 @@
   right: 12%;
   width: 20%;
   box-shadow: 3px 3px 5px 1px hsl(219, 9%, 45%);
-  padding: 1rem
+  padding: 1rem;
 }
 .CartContainer h2{
   margin-bottom: 5%
@@ -36,4 +36,17 @@
 }
 .CartContainer button:hover{
   background-color: rgba(255, 125, 26, 0.4);
+}
+.EmptyCartContainer{
+  height: 150px;
+  text-align: center;
+}
+.EmptyCart {
+  /* border: 3px solid; */
+  position: relative;
+  margin: auto;
+  top: 60px;
+  font-style: italic;
+  color: grey;
+  z-index: 3;
 }

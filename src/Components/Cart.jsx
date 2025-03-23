@@ -15,16 +15,23 @@ export default function Cart({count, setOpenCart}) {
 
   return (
     <div className='CartContainer'>
-      <h2> Cart </h2>
-      <div className='ItemContainer'>
-        <img src='image-product-1.jpg' />
-        <div className =  'AboutItem'>
-          <p> Fall Limited Edition Sneakers </p>
-          <p> $125.00 * {count} <strong> ${value}.00 </strong> </p>
+      {count > 0? 
+      <div>
+        <h2> Cart </h2>
+        <div className='ItemContainer'>
+          <img src='image-product-1.jpg' />
+          <div className =  'AboutItem'>
+            <p> Fall Limited Edition Sneakers </p>
+            <p> $125.00 * {count} <strong> ${value}.00 </strong> </p>
+          </div>
+          <RiDeleteBin5Line color='grey' size={25} />
         </div>
-        <RiDeleteBin5Line color='grey' size={25} />
+        <button onClick={closeCart} > Checkout </button>
       </div>
-      <button onClick={closeCart} > Checkout </button>
+      :
+      <div className='EmptyCartContainer'>
+        <p className='EmptyCart'> Your cart is empty </p>
+      </div>}
     </div>
   )
 }
