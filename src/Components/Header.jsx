@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './Header.css'
 
-export default function Header() {
+export default function Header({setOpenCart}) {
   const [select, setSelect] = useState(0)
 
   const Links = [
@@ -31,8 +31,13 @@ export default function Header() {
   const handleSelection = (id)=> {
     setSelect(id)
   }
+
+  const openCart = () => {
+    setOpenCart(true)
+  }
+
   return (
-    <div >
+    <div className='Header' >
       <div className="HeaderContainer">
       <div className="LogoLinks">
         <div className="Logo">
@@ -45,7 +50,7 @@ export default function Header() {
         </div>
       </div>
       <div className="Profiles">
-        <img src='/icon-cart.svg' alt='Cart' className="cart" />
+        <img src='/icon-cart.svg' alt='Cart' className="cart" onClick={openCart} />
         <img src='/image-avatar.png' alt='Profile' className="profile"/>
       </div>
       </div>

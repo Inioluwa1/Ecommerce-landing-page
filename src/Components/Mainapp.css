@@ -1,0 +1,158 @@
+.MainappContainer{
+  display: flex;
+  /* border: 3px solid; */
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  margin: auto;
+}
+
+.Images{
+  width: 45%;
+  /* border: 3px solid */
+}
+.ImageSlider{
+  /* border: 3px solid; */
+  display: flex;
+  overflow: hidden;
+}
+.MainImage{
+  width: 90%;
+  height: 50%;
+  border-radius: 30px;
+  margin-right: 10%;
+  display: none;
+}
+.selected{
+  display: block;
+}
+.SmallImages{
+  /* border: 3px solid; */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3%;
+  width: 90%;
+}
+.SmallImage{
+  width: 20%;
+  height: 20%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.SelectedImage{
+  border: 2px solid rgb(255, 125, 26);
+  opacity: 0.5;
+}
+.SmallImage:hover{
+  opacity: 0.5;
+}
+.MainContent{
+  width: 45%;
+  /* border: 3px solid; */
+}
+.Content{
+  /* border: 3px solid; */
+  width: 90%
+}
+.Content h5{
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 2%;
+}
+.ItemName{
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 7%;
+}
+.ItemContent{
+  color: grey;
+  margin-bottom: 3%;
+  font-size: 1.1rem;
+}
+.NewPrice{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 33%;
+}
+.NewPrice h1{
+  font-size: 1.7rem;
+}
+.NewPrice p{
+  background-color: black;
+  color: white;
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.OldPrice{
+  text-decoration: line-through;
+  font-weight: 800;
+  color: grey;
+  margin-top: 3%;
+}
+.Buttons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 92%;
+  margin-top: 5%;
+  /* border: 3px solid; */
+}
+.Counter{
+  display: flex;
+  /* border: 3px solid; */
+  align-items: center;
+  width: 30%;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  padding: 7px 10px;
+  background-color: rgb(247, 248, 253);
+}
+.decrease{
+  /* border: 3px solid; */
+  width: 30% ;
+  text-align: center;
+  cursor: pointer
+}
+.decrease img{
+  align-self: center;
+  position: relative;
+  bottom: 4px;
+}
+.increase{
+  /* border: 3px solid; */
+  width: 30% ;
+  text-align: center;
+  cursor: pointer;
+}
+.decrease:hover, .increase:hover{
+  opacity: 0.5;
+}
+.AddToCart{
+  width: 67%;
+  /* border: 3px solid; */
+}
+.Cart{
+  margin-right: 10px;
+  align-self: center;
+  position: relative;
+  top: 3px
+}
+.AddToCart button{
+  background-color: rgb(255, 125, 26);
+  width: 100%;
+  padding: 10px ;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.6rem;
+  cursor: pointer ;
+}
+.AddToCart button:hover{
+  background-color: rgba(255, 125, 26, 0.4);
+}
